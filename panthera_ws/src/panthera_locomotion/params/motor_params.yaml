@@ -1,0 +1,42 @@
+lb_ku: -1
+lb_tu: -1
+lb_ln: 0
+lb_kp: 0
+lb_ki: 0
+lb_kd: 0
+
+lb_serial_number: 'FT4ZF49U'
+lb_serial_number2: 'FT3X3ISJ'
+lb_max_speed: 800
+
+lf_ku: -1
+lf_tu: -1
+lf_ln: 0
+lf_kp: 0
+lf_ki: 0
+lf_kd: 0
+lf_serial_number: 'FT4ZEYO5'
+lf_serial_number2: 'FT4IT45E'
+lf_max_speed: 800
+
+rb_ku: -1 # 1.5
+rb_tu: -1 # 15
+rb_ln: 0
+rb_kp: 0
+rb_ki: 0
+rb_kd: 0
+rb_serial_number: 'FT4WIU28'
+rb_serial_number2: 'FT4ITA2X'
+rb_max_speed: 800
+
+rf_ku: -1   #1
+rf_tu: -1  #15
+rf_ln: 0       #18
+rf_kp: 0
+rf_ki: 0
+rf_kd: 0
+rf_serial_number: 'FT4WIY51'
+rf_serial_number2: 'FT4JQ6DY'
+rf_max_speed: 800
+
+angle_tolerance: 1.5

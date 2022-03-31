@@ -1,0 +1,110 @@
+ros_to_mqtt:
+  - factory: ros_to_mqtt
+    msg_type: geometry_msgs/Twist.msg
+    topic_from: /can_encoder
+    topic_to: /Steering_Encoders
+
+ros_to_mqtt:
+  - factory: ros_to_mqtt
+    msg_type: panthera_locomotion/Custom_msg  # float64 current; float64 speed; float64 target_speed; fload64 pid_speed
+    topic_from: /lb_wheel_vel
+    topic_to: 
+
+ros_to_mqtt:
+  - factory: ros_to_mqtt
+    msg_type: panthera_locomotion/Custom_msg
+    topic_from: /lf_wheel_vel
+    topic_to: 
+
+ros_to_mqtt:
+  - factory: ros_to_mqtt
+    msg_type: panthera_locomotion/Custom_msg
+    topic_from: /rb_wheel_vel
+    topic_to: 
+
+ros_to_mqtt:
+  - factory: ros_to_mqtt
+    msg_type: panthera_locomotion/Custom_msg
+    topic_from: /rf_wheel_vel
+    topic_to: 
+
+ros_to_mqtt:
+  - factory: ros_to_mqtt
+    msg_type: std_msgs/Float64
+    topic_from: /batteryInfo
+    topic_to: 
+
+
+
+mqtt_to_ros: 
+  # Panthera Controller Topics 
+  - factory: 
+    msg_type: ds4_driver/Status
+    topic_from:  
+    topic_to: /status
+
+# $rosmsg show ds4_driver/Status
+# std_msgs/Header header
+#   uint32 seq
+#   time stamp
+#   string frame_id
+# float32 axis_left_x
+# float32 axis_left_y
+# float32 axis_right_x
+# float32 axis_right_y
+# float32 axis_l2
+# float32 axis_r2
+# int32 button_dpad_up
+# int32 button_dpad_down
+# int32 button_dpad_left
+# int32 button_dpad_right
+# int32 button_cross
+# int32 button_circle
+# int32 button_square
+# int32 button_triangle
+# int32 button_l1
+# int32 button_l2
+# int32 button_l3
+# int32 button_r1
+# int32 button_r2
+# int32 button_r3
+# int32 button_share
+# int32 button_options
+# int32 button_trackpad
+# int32 button_ps
+# sensor_msgs/Imu imu
+#   std_msgs/Header header
+#     uint32 seq
+#     time stamp
+#     string frame_id
+#   geometry_msgs/Quaternion orientation
+#     float64 x
+#     float64 y
+#     float64 z
+#     float64 w
+#   float64[9] orientation_covariance
+#   geometry_msgs/Vector3 angular_velocity
+#     float64 x
+#     float64 y
+#     float64 z
+#   float64[9] angular_velocity_covariance
+#   geometry_msgs/Vector3 linear_acceleration
+#     float64 x
+#     float64 y
+#     float64 z
+#   float64[9] linear_acceleration_covariance
+# float32 battery_percentage
+# int32 battery_full_charging
+# ds4_driver/Trackpad touch0
+#   uint16 id
+#   int32 active
+#   float32 x
+#   float32 y
+# ds4_driver/Trackpad touch1
+#   uint16 id
+#   int32 active
+#   float32 x
+#   float32 y
+# int32 plug_usb
+# int32 plug_audio
+# int32 plug_mic

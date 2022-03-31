@@ -1,0 +1,5 @@
+<launch>
+	<rosparam command="load" file="$(find panthera_locomotion)/params/steer_params.yaml"/>
+
+	<node name="rb_steering_motor" type="rb_steer.py" pkg="panthera_locomotion" output="screen"/>
+</launch>

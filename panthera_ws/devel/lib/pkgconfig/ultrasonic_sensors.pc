@@ -1,0 +1,8 @@
+prefix=/home/panthera/panthera_ws/devel
+
+Name: ultrasonic_sensors
+Description: Description of ultrasonic_sensors
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
