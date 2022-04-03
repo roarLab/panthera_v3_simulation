@@ -1,0 +1,41 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+  
+/gazebo_ros_control:
+  pid_gains:
+    fl_steering_link_joint_controller:
+      p: 50
+      i: 1
+      d: 0.01
+    fr_steering_link_joint_controller:
+      p: 50
+      i: 1
+      d: 0.01
+    rl_steering_link_joint_controller:
+      p: 50
+      i: 1
+      d: 0.01
+    rr_steering_link_joint_controller:
+      p: 50
+      i: 1
+      d: 0.01
+    fl_wheel_link_joint_controller:
+      p: 10
+      i: 1
+      d: 0.01
+    fr_wheel_link_joint_controller:
+      p: 10
+      i: 1
+      d: 0.01
+    rl_wheel_link_joint_controller:
+      p: 10
+      i: 1
+      d: 0.01
+    rr_wheel_link_joint_controller:
+      p: 10
+      i: 1
+      d: 0.01
+      

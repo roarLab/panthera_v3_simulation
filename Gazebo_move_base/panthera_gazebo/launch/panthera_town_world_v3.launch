@@ -1,0 +1,54 @@
+<launch>
+
+  <!--arg name="model" default="$(find panthera_description)/urdf/panthera_v3.urdf"/-->
+  <arg name="model" default="$(find panthera_description)/urdf/panthera_v3_with_2d_laser.urdf"/>
+  <!--arg name="model" default="$(find panthera_description)/urdf/panthera_v3_with_velodyne.urdf"/-->
+
+  <arg name="x_pos" default="-8.0"/>
+  <arg name="y_pos" default="-4.0"/>
+  <arg name="z_pos" default="0.4"/>
+
+  <!-- launch gazebo world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find panthera_gazebo)/worlds/town.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find panthera_gazebo)/config/panthera_controller.yaml" command="load"/>
+
+ <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+  <param name="use_gui" value="TRUE" /> 
+ </node--> 
+
+
+  <!-- convert joint states to TF transforms for rviz -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/joint_states" />
+  </node>
+  
+  <!-- load urdf into robot_description parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model) " />
+
+
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/panthera_robot" args="joint_state_controller fl_steering_link_joint_controller fr_steering_link_joint_controller rl_steering_link_joint_controller rr_steering_link_joint_controller fl_wheel_link_joint_controller fr_wheel_link_joint_controller rl_wheel_link_joint_controller rr_wheel_link_joint_controller"/>
+
+
+  <!-- spawn panthera model in gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model panthera -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
+  <!-- rviz configuration path -->
+  <arg name="rvizconfig" default="$(find panthera_gazebo)/rviz/rviz_display_hallway.rviz" />
+
+  <!-- rivz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
+
+</launch>

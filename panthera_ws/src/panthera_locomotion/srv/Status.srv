@@ -1,4 +1,0 @@
-bool reconfig
----
-bool status
-int64 speed

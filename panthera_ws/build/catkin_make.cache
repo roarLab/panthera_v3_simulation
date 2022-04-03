@@ -1,2 +1,0 @@
-can_encoder_pub:ds4_driver:key_command_pub:local_planner:panthera_locomotion:roboclaw_node:ultrasonic_sensors
--DCATKIN_DEVEL_PREFIX=/home/panthera/panthera_ws/devel -DCMAKE_INSTALL_PREFIX=/home/panthera/panthera_ws/install -G Unix Makefiles

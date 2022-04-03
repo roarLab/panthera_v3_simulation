@@ -1,8 +1,0 @@
-prefix=/home/panthera/panthera_ws/install
-
-Name: panthera_locomotion
-Description: Description of panthera_locomotion
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs roscpp rospy std_msgs message_runtime nav_msgs tf tf_conversions tf2_ros

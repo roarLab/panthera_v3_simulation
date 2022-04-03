@@ -1,7 +1,0 @@
-<launch>
-	<rosparam command="load" file="$(find panthera_locomotion)/params/motor_params.yaml"/>
-	<node name="roboteq_motor_lb" type="roboteq_motor_lb.py" pkg="panthera_locomotion" output="screen"/>
-	<node name="roboteq_motor_lf" type="roboteq_motor_lf.py" pkg="panthera_locomotion" output="screen"/>
-	<node name="roboteq_motor_rb" type="roboteq_motor_rb.py" pkg="panthera_locomotion" output="screen"/>
-	<node name="roboteq_motor_rf" type="roboteq_motor_rf.py" pkg="panthera_locomotion" output="screen"/>
-</launch>

@@ -1,0 +1,72 @@
+panthera_robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  # Position Controllers ---------------------------------------
+  fl_steering_link_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: fl_steering_link_joint
+
+  fr_steering_link_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: fr_steering_link_joint
+
+  rl_steering_link_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: rl_steering_link_joint
+
+  rr_steering_link_joint_controller:
+    type: position_controllers/JointPositionController
+    joint: rr_steering_link_joint
+
+  fl_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: fl_wheel_link_joint
+
+  fr_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: fr_wheel_link_joint
+
+  rl_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: rl_wheel_link_joint
+
+  rr_wheel_link_joint_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: rr_wheel_link_joint
+
+/gazebo_ros_control:
+  pid_gains:
+    fl_steering_link_joint:
+      p: 50
+      i: 1
+      d: 0.01
+    fr_steering_link_joint:
+      p: 50
+      i: 1
+      d: 0.01
+    rl_steering_link_joint:
+      p: 50
+      i: 1
+      d: 0.01
+    rr_steering_link_joint:
+      p: 50
+      i: 1
+      d: 0.01
+    fl_wheel_link_joint:
+      p: 10
+      i: 1
+      d: 0.01
+    fr_wheel_link_joint:
+      p: 10
+      i: 1
+      d: 0.01
+    rl_wheel_link_joint:
+      p: 10
+      i: 1
+      d: 0.01
+    rr_wheel_link_joint:
+      p: 10
+      i: 1
+      d: 0.01
