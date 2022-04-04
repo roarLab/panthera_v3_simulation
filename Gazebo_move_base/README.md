@@ -10,15 +10,24 @@ Make sure you have ROS melodic installed, Tested in Ros noetic. Although other r
 
 ## Build from source
 
+
+
 ```
 cd <ros1_ws>/src
-git clone https://github.com/roarLab/panthera_simulations
+git clone https://github.com/roarLab/panthera_v3_simulation
 sudo apt-get install ros-melodic-navigation ros-melodic-ros-control ros-melodic-velocity-controllers ros-melodic-position-controllers
 
 cd ..
 rosdep install -y --from-paths src --ignore-src --rosdistro <YOUR_ROS_DISTRO>
 catkin_make
 ```
+## Give permission to executable files
+
+'''
+cd <ros1_ws>/src/panthera_v3_simulation/Gazebo_move_base/panthera_move_base/src
+chmod 777 *
+
+'''
 
 
 ## Simulate panthera in small room-like environment
