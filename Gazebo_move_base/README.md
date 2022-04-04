@@ -23,11 +23,12 @@ catkin_make
 ```
 ## Give permission to executable files
 
-'''
+```
+
 cd <ros1_ws>/src/panthera_v3_simulation/Gazebo_move_base/panthera_move_base/src
 chmod 777 *
 
-'''
+```
 
 
 ## Simulate panthera in small room-like environment
