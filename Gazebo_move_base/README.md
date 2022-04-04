@@ -47,7 +47,7 @@ source devel/setup.bash
 rosrun panthera_move_base odom_pub_tf.py
 ```
 
-## Run the odom
+## Run the inverse kinematics
 
 ```
 cd <ros1_ws>
